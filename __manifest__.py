@@ -1,7 +1,7 @@
 {
     'name': "Sale Order Approval",
 
-    'application': "True",
+    # 'application': "True",
 
     'sequence': "2",
 
