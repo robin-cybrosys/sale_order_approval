@@ -6,7 +6,7 @@ class SaleOrder(models.Model):
     _inherit = ['sale.order']
     # Method(Without Over writing state(s))
     state = fields.Selection(
-        selection_add=[('waiting', 'Waiting Approval'),('sent',)])
+        selection_add=[('waiting', 'Waiting Approval'),('sent',)],ondelete={'waiting': 'set default'})
     # state = fields.Selection([
     #     ('draft', 'Quotation'),
     #     ('waiting', 'Waiting Approval'),
