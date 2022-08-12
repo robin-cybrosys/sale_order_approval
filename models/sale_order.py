@@ -5,16 +5,17 @@ from odoo.exceptions import ValidationError
 class SaleOrder(models.Model):
     _inherit = ['sale.order']
     # Method(Without Over writing state(s))
-    # state = fields.Selection(selection_add=[('waiting', 'Waiting Approval')])
-    state = fields.Selection([
-        ('draft', 'Quotation'),
-        ('waiting', 'Waiting Approval'),
-        ('sent', 'Quotation Sent'),
-        ('sale', 'Sales Order'),
-        ('done', 'Locked'),
-        ('cancel', 'Cancelled'),
-    ], string='Status', readonly=True, copy=False, index=True, tracking=True,
-        default='draft')
+    state = fields.Selection(
+        selection_add=[('waiting', 'Waiting Approval'),('sent',)])
+    # state = fields.Selection([
+    #     ('draft', 'Quotation'),
+    #     ('waiting', 'Waiting Approval'),
+    #     ('sent', 'Quotation Sent'),
+    #     ('sale', 'Sales Order'),
+    #     ('done', 'Locked'),
+    #     ('cancel', 'Cancelled'),
+    # ], string='Status', readonly=True, copy=False, index=True, tracking=True,
+    #     default='draft')
 
     # boolean for changing visibility of 'send to manager button'
     btn_visibility = fields.Boolean(string='Visible', default=False)

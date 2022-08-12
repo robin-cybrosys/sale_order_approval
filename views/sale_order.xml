@@ -26,9 +26,9 @@
                 </xpath>
                 <!-- status bar:add>'waiting'-->
                 <xpath expr="//button[@name='action_cancel']" position="attributes">
-                    <attribute name="state">
-                        draft,waiting,sent,sale,
-                    </attribute>
+                    <attribute name="state"/>
+<!--                        draft,waiting,sent,sale,-->
+<!--                    </attribute>-->
                 </xpath>
             </field>
         </record>
